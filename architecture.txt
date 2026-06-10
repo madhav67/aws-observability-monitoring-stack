@@ -1,0 +1,63 @@
+AWS Observability Architecture
+
+EC2 Instance 1
+---------------
+Prometheus
+
+EC2 Instance 2
+---------------
+Grafana
+
+EC2 Instance 3
+---------------
+Loki
+
+EC2 Instance 4
+---------------
+Flask Application
+Node Exporter
+Grafana Alloy
+
+Metrics Flow
+------------
+
+Flask App
+      |
+      v
+Prometheus
+      |
+      v
+Grafana
+
+System Metrics Flow
+-------------------
+
+Node Exporter
+      ^	
+      |
+Prometheus
+      |
+      v
+Grafana
+
+Log Flow
+--------
+
+Application Logs
+      |
+      v
+Grafana Alloy
+      |
+      v
+Loki
+      |
+      v
+Grafana Explore
+
+Alert Flow
+----------
+
+Grafana Alert Rule
+      |
+      v
+Slack Channel
